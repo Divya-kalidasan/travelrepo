@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Places - Smart Travel Companion</title>
+    <link rel="stylesheet" href="explore.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css">
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="explore-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-plane-departure"></i>
+                <h1>Smart Travel Companion</h1>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="explore.html">
+                        <i class="fas fa-compass"></i>
+                        <span>Explore</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#trip-planning">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Trip Planning</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#navigation">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Navigation</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#memories">
+                        <i class="fas fa-camera"></i>
+                        <span>Memories</span>
+                    </a>
+                </li>
+                <li class="logout">
+                    <a href="index.html">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-container">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search destinations, attractions, or experiences...">
+                    </div>
+                    <div class="filter-toggle">
+                        <i class="fas fa-sliders-h"></i>
+                        <span>Filters</span>
+                    </div>
+                </div>
+                <div class="user-profile">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <img src="https://via.placeholder.com/40" alt="User Profile">
+                    <span>Welcome, User!</span>
+                </div>
+            </header>
+
+            <!-- Filter Panel -->
+            <div class="filter-panel">
+                <div class="filter-section">
+                    <h3>Location</h3>
+                    <div class="filter-options">
+                        <select class="filter-select">
+                            <option value="">Select Region</option>
+                            <option value="europe">Europe</option>
+                            <option value="asia">Asia</option>
+                            <option value="americas">Americas</option>
+                            <option value="africa">Africa</option>
+                        </select>
+                        <select class="filter-select">
+                            <option value="">Select Country</option>
+                            <option value="france">France</option>
+                            <option value="japan">Japan</option>
+                            <option value="usa">United States</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3>Rating</h3>
+                    <div class="rating-filter">
+                        <div class="rating-option">
+                            <input type="checkbox" id="rating5">
+                            <label for="rating5">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="checkbox" id="rating4">
+                            <label for="rating4">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="checkbox" id="rating3">
+                            <label for="rating3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3>Crowd Level</h3>
+                    <div class="crowd-filter">
+                        <div class="crowd-option">
+                            <input type="checkbox" id="crowd-low">
+                            <label for="crowd-low">
+                                <i class="fas fa-user"></i>
+                                <span>Low</span>
+                            </label>
+                        </div>
+                        <div class="crowd-option">
+                            <input type="checkbox" id="crowd-medium">
+                            <label for="crowd-medium">
+                                <i class="fas fa-users"></i>
+                                <span>Medium</span>
+                            </label>
+                        </div>
+                        <div class="crowd-option">
+                            <input type="checkbox" id="crowd-high">
+                            <label for="crowd-high">
+                                <i class="fas fa-users-cog"></i>
+                                <span>High</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3>Hygiene Score</h3>
+                    <div class="hygiene-slider">
+                        <input type="range" min="0" max="100" value="50" class="slider">
+                        <div class="slider-labels">
+                            <span>0</span>
+                            <span>50</span>
+                            <span>100</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-actions">
+                    <button class="apply-filters">Apply Filters</button>
+                    <button class="reset-filters">Reset</button>
+                </div>
+            </div>
+
+            <!-- Places Grid -->
+            <div class="places-grid">
+                <!-- Place Card 1 -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="https://source.unsplash.com/800x600/?paris" alt="Eiffel Tower">
+                        <div class="place-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                        </div>
+                    </div>
+                    <div class="place-content">
+                        <h3>Eiffel Tower</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Paris, France</p>
+                        <div class="place-meta">
+                            <span class="crowd-level"><i class="fas fa-users"></i> Medium</span>
+                            <span class="hygiene-score"><i class="fas fa-shield-alt"></i> 95%</span>
+                        </div>
+                        <p class="description">Iconic iron lattice tower on the Champ de Mars in Paris, named after engineer Gustave Eiffel.</p>
+                        <div class="place-actions">
+                            <button class="view-details">View Details</button>
+                            <button class="save-place"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Place Card 2 -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="https://source.unsplash.com/800x600/?japan" alt="Mount Fuji">
+                        <div class="place-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.9</span>
+                        </div>
+                    </div>
+                    <div class="place-content">
+                        <h3>Mount Fuji</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Tokyo, Japan</p>
+                        <div class="place-meta">
+                            <span class="crowd-level"><i class="fas fa-user"></i> Low</span>
+                            <span class="hygiene-score"><i class="fas fa-shield-alt"></i> 98%</span>
+                        </div>
+                        <p class="description">Japan's highest mountain and an active volcano, offering stunning views and hiking opportunities.</p>
+                        <div class="place-actions">
+                            <button class="view-details">View Details</button>
+                            <button class="save-place"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more place cards as needed -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Place Details Modal -->
+    <div class="modal" id="placeDetailsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Place Details</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="place-gallery">
+                    <div class="main-image">
+                        <img src="https://source.unsplash.com/800x600/?paris" alt="Main Image">
+                    </div>
+                    <div class="thumbnail-grid">
+                        <img src="https://source.unsplash.com/400x300/?paris" alt="Thumbnail 1">
+                        <img src="https://source.unsplash.com/400x300/?eiffel" alt="Thumbnail 2">
+                        <img src="https://source.unsplash.com/400x300/?tower" alt="Thumbnail 3">
+                    </div>
+                </div>
+                <div class="place-info">
+                    <h3>Eiffel Tower</h3>
+                    <div class="place-stats">
+                        <span><i class="fas fa-star"></i> 4.8</span>
+                        <span><i class="fas fa-users"></i> Medium Crowd</span>
+                        <span><i class="fas fa-shield-alt"></i> 95% Hygiene</span>
+                    </div>
+                    <div class="place-description">
+                        <h4>About</h4>
+                        <p>The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower.</p>
+                    </div>
+                    <div class="place-features">
+                        <h4>Features</h4>
+                        <ul>
+                            <li><i class="fas fa-clock"></i> Open 24/7</li>
+                            <li><i class="fas fa-ticket-alt"></i> Tickets Available</li>
+                            <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                            <li><i class="fas fa-parking"></i> Parking Available</li>
+                        </ul>
+                    </div>
+                    <div class="place-map" id="placeMap"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize map
+        const map = L.map('placeMap').setView([48.8584, 2.2945], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Modal functionality
+        const modal = document.getElementById('placeDetailsModal');
+        const closeBtn = document.querySelector('.close-modal');
+        const viewDetailsBtns = document.querySelectorAll('.view-details');
+
+        viewDetailsBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modal.style.display = 'block';
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html> 
