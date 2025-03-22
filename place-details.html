@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eiffel Tower - Smart Travel Companion</title>
+    <link rel="stylesheet" href="explore.css">
+    <link rel="stylesheet" href="place-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css">
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="explore-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-plane-departure"></i>
+                <h1>Smart Travel Companion</h1>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="explore.html">
+                        <i class="fas fa-compass"></i>
+                        <span>Explore</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#trip-planning">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Trip Planning</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#navigation">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Navigation</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#memories">
+                        <i class="fas fa-camera"></i>
+                        <span>Memories</span>
+                    </a>
+                </li>
+                <li class="logout">
+                    <a href="index.html">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Back Navigation -->
+            <div class="back-nav">
+                <a href="explore.html" class="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Explore
+                </a>
+            </div>
+
+            <!-- Place Header -->
+            <header class="place-header">
+                <div class="place-title">
+                    <h1>Eiffel Tower</h1>
+                    <div class="place-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France</span>
+                    </div>
+                </div>
+                <div class="place-actions">
+                    <button class="add-to-trip">
+                        <i class="fas fa-calendar-plus"></i>
+                        Add to Trip Plan
+                    </button>
+                    <button class="share-button">
+                        <i class="fas fa-share-alt"></i>
+                        Share
+                    </button>
+                </div>
+            </header>
+
+            <!-- Main Content Grid -->
+            <div class="place-details-grid">
+                <!-- Left Column -->
+                <div class="left-column">
+                    <!-- Image Gallery -->
+                    <div class="image-gallery">
+                        <div class="main-image">
+                            <img src="https://source.unsplash.com/1200x800/?eiffel-tower" alt="Eiffel Tower Main View">
+                        </div>
+                        <div class="thumbnail-grid">
+                            <img src="https://source.unsplash.com/400x300/?eiffel-tower-night" alt="Night View">
+                            <img src="https://source.unsplash.com/400x300/?eiffel-tower-day" alt="Day View">
+                            <img src="https://source.unsplash.com/400x300/?eiffel-tower-close" alt="Close Up">
+                            <img src="https://source.unsplash.com/400x300/?eiffel-tower-park" alt="Park View">
+                        </div>
+                    </div>
+
+                    <!-- Description Section -->
+                    <section class="description-section">
+                        <h2>About</h2>
+                        <div class="description-content">
+                            <p>The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower. Locally nicknamed "La dame de fer" (French for "Iron Lady"), it was constructed from 1887 to 1889 as the entrance to the 1889 World's Fair.</p>
+                            <p>It has become a global cultural icon of France and one of the most recognizable structures in the world. The tower is the tallest structure in Paris and the most-visited paid monument in the world.</p>
+                        </div>
+                    </section>
+
+                    <!-- History Section -->
+                    <section class="history-section">
+                        <h2>History</h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="year">1887</div>
+                                <div class="content">
+                                    <h3>Construction Begins</h3>
+                                    <p>Work on the foundation and first level begins on January 28, 1887.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="year">1889</div>
+                                <div class="content">
+                                    <h3>Completion</h3>
+                                    <p>The tower is completed on March 31, 1889, just in time for the World's Fair.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="year">1909</div>
+                                <div class="content">
+                                    <h3>Permanent Structure</h3>
+                                    <p>The tower is saved from demolition and becomes a permanent part of Paris.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right Column -->
+                <div class="right-column">
+                    <!-- Quick Info Card -->
+                    <div class="quick-info-card">
+                        <h3>Quick Information</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <div class="info-content">
+                                    <span class="label">Opening Hours</span>
+                                    <span class="value">9:00 AM - 10:45 PM</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-ticket-alt"></i>
+                                <div class="info-content">
+                                    <span class="label">Ticket Price</span>
+                                    <span class="value">€26.80</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-users"></i>
+                                <div class="info-content">
+                                    <span class="label">Crowd Level</span>
+                                    <span class="value">High</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <div class="info-content">
+                                    <span class="label">Hygiene Score</span>
+                                    <span class="value">95%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reviews Section -->
+                    <section class="reviews-section">
+                        <h2>Reviews</h2>
+                        <div class="reviews-summary">
+                            <div class="overall-rating">
+                                <span class="rating-number">4.8</span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="review-count">2,547 reviews</span>
+                            </div>
+                            <div class="rating-bars">
+                                <div class="rating-bar">
+                                    <span class="label">5</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 75%"></div>
+                                    </div>
+                                    <span class="count">1,910</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span class="label">4</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 20%"></div>
+                                    </div>
+                                    <span class="count">510</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span class="label">3</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 4%"></div>
+                                    </div>
+                                    <span class="count">102</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span class="label">2</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 0.5%"></div>
+                                    </div>
+                                    <span class="count">10</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span class="label">1</span>
+                                    <div class="bar">
+                                        <div class="fill" style="width: 0.5%"></div>
+                                    </div>
+                                    <span class="count">10</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Reviews -->
+                        <div class="recent-reviews">
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <img src="https://via.placeholder.com/40" alt="User Avatar" class="reviewer-avatar">
+                                    <div class="reviewer-info">
+                                        <h4>Sarah Johnson</h4>
+                                        <div class="review-stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">2 days ago</span>
+                                </div>
+                                <p class="review-text">Absolutely breathtaking! The views from the top are incredible. We went at sunset and it was magical. The staff was friendly and the facilities were clean.</p>
+                                <div class="review-photos">
+                                    <img src="https://source.unsplash.com/300x300/?eiffel-tower-view" alt="Review Photo">
+                                    <img src="https://source.unsplash.com/300x300/?paris-sunset" alt="Review Photo">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Nearby Places -->
+                    <section class="nearby-places">
+                        <h2>Nearby Places</h2>
+                        <div class="nearby-grid">
+                            <div class="nearby-card">
+                                <img src="https://source.unsplash.com/400x300/?restaurant-paris" alt="Restaurant">
+                                <div class="nearby-info">
+                                    <h4>Le Jules Verne</h4>
+                                    <p class="type">Restaurant</p>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.7</span>
+                                    </div>
+                                    <p class="distance">0.2 km away</p>
+                                </div>
+                            </div>
+                            <div class="nearby-card">
+                                <img src="https://source.unsplash.com/400x300/?cafe-paris" alt="Cafe">
+                                <div class="nearby-info">
+                                    <h4>Café de l'Homme</h4>
+                                    <p class="type">Café</p>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.5</span>
+                                    </div>
+                                    <p class="distance">0.3 km away</p>
+                                </div>
+                            </div>
+                            <div class="nearby-card">
+                                <img src="https://source.unsplash.com/400x300/?park-paris" alt="Park">
+                                <div class="nearby-info">
+                                    <h4>Champ de Mars</h4>
+                                    <p class="type">Park</p>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.8</span>
+                                    </div>
+                                    <p class="distance">0.1 km away</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add to Trip Modal -->
+    <div class="modal" id="addToTripModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add to Trip Plan</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="trip-selection">
+                    <h3>Select Trip</h3>
+                    <div class="trip-list">
+                        <div class="trip-item">
+                            <input type="radio" name="trip" id="trip1">
+                            <label for="trip1">
+                                <div class="trip-info">
+                                    <h4>Paris Adventure</h4>
+                                    <p>July 15-22, 2024</p>
+                                </div>
+                                <div class="trip-status">
+                                    <span class="status-badge">Active</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="trip-item">
+                            <input type="radio" name="trip" id="trip2">
+                            <label for="trip2">
+                                <div class="trip-info">
+                                    <h4>European Tour</h4>
+                                    <p>August 1-15, 2024</p>
+                                </div>
+                                <div class="trip-status">
+                                    <span class="status-badge">Planned</span>
+                                </div>
+                            </label>
+                        </div>
+                        <button class="create-new-trip">
+                            <i class="fas fa-plus"></i>
+                            Create New Trip
+                        </button>
+                    </div>
+                </div>
+                <div class="visit-details">
+                    <h3>Visit Details</h3>
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Time</label>
+                        <input type="time" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Duration</label>
+                        <select class="form-control">
+                            <option>1 hour</option>
+                            <option>2 hours</option>
+                            <option>3 hours</option>
+                            <option>4 hours</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Notes</label>
+                        <textarea class="form-control" placeholder="Add any specific notes or preferences..."></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-button">Cancel</button>
+                <button class="confirm-button">Add to Trip</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize map
+        const map = L.map('placeMap').setView([48.8584, 2.2945], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Modal functionality
+        const modal = document.getElementById('addToTripModal');
+        const addToTripBtn = document.querySelector('.add-to-trip');
+        const closeBtn = document.querySelector('.close-modal');
+        const cancelBtn = document.querySelector('.cancel-button');
+
+        addToTripBtn.addEventListener('click', () => {
+            modal.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        cancelBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Image gallery functionality
+        const thumbnails = document.querySelectorAll('.thumbnail-grid img');
+        const mainImage = document.querySelector('.main-image img');
+
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                mainImage.src = thumb.src;
+            });
+        });
+    </script>
+</body>
+</html> 
