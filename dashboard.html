@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Travel Companion - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-plane-departure"></i>
+                <h1>Smart Travel Companion</h1>
+            </div>
+            <ul class="nav-links">
+                <li class="active">
+                    <a href="#dashboard">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#explore">
+                        <i class="fas fa-compass"></i>
+                        <span>Explore</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#trip-planning">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Trip Planning</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#navigation">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Navigation</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#memories">
+                        <i class="fas fa-camera"></i>
+                        <span>Memories</span>
+                    </a>
+                </li>
+                <li class="logout">
+                    <a href="index.html">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search destinations, trips, or memories...">
+                </div>
+                <div class="user-profile">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <img src="https://via.placeholder.com/40" alt="User Profile">
+                    <span>Welcome, User!</span>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <div class="welcome-section">
+                    <h2>Welcome to Your Travel Dashboard</h2>
+                    <p>Plan your next adventure with Smart Travel Companion</p>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <i class="fas fa-map"></i>
+                        <h3>Upcoming Trips</h3>
+                        <p>No trips planned yet</p>
+                        <button class="card-btn">Plan New Trip</button>
+                    </div>
+                    <div class="dashboard-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <h3>Completed Trips</h3>
+                        <p>0 trips completed</p>
+                        <button class="card-btn">View History</button>
+                    </div>
+                    <div class="dashboard-card">
+                        <i class="fas fa-star"></i>
+                        <h3>Saved Places</h3>
+                        <p>0 places saved</p>
+                        <button class="card-btn">Browse Places</button>
+                    </div>
+                    <div class="dashboard-card">
+                        <i class="fas fa-camera-retro"></i>
+                        <h3>Travel Photos</h3>
+                        <p>0 photos uploaded</p>
+                        <button class="card-btn">Upload Photos</button>
+                    </div>
+                </div>
+
+                <!-- Recent Activity Section -->
+                <div class="recent-activity">
+                    <h3>Recent Activity</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="activity-content">
+                                <h4>New Destination Added</h4>
+                                <p>Paris, France</p>
+                            </div>
+                            <span class="activity-time">2 hours ago</span>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-calendar-plus"></i>
+                            <div class="activity-content">
+                                <h4>Trip Created</h4>
+                                <p>Summer Vacation 2024</p>
+                            </div>
+                            <span class="activity-time">1 day ago</span>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-camera"></i>
+                            <div class="activity-content">
+                                <h4>Photo Uploaded</h4>
+                                <p>Eiffel Tower, Paris</p>
+                            </div>
+                            <span class="activity-time">3 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html> 
