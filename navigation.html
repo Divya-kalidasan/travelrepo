@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation - Smart Travel Companion</title>
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="navigation-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-plane-departure"></i>
+                <h1>Smart Travel Companion</h1>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="explore.html">
+                        <i class="fas fa-compass"></i>
+                        <span>Explore</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="trip-planning.html">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Trip Planning</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="navigation.html">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Navigation</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#memories">
+                        <i class="fas fa-camera"></i>
+                        <span>Memories</span>
+                    </a>
+                </li>
+                <li class="logout">
+                    <a href="index.html">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search location...">
+                </div>
+                <button class="current-location-btn">
+                    <i class="fas fa-location-dot"></i>
+                    Use Current Location
+                </button>
+            </header>
+
+            <!-- Navigation Content -->
+            <div class="navigation-content">
+                <!-- Map Section -->
+                <div class="map-section">
+                    <div id="map"></div>
+                </div>
+
+                <!-- Navigation Panel -->
+                <div class="navigation-panel">
+                    <div class="route-inputs">
+                        <div class="input-group">
+                            <i class="fas fa-location-dot"></i>
+                            <input type="text" placeholder="Starting Point">
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-flag-checkered"></i>
+                            <input type="text" placeholder="Destination">
+                        </div>
+                    </div>
+
+                    <div class="route-options">
+                        <div class="route-card active">
+                            <i class="fas fa-car"></i>
+                            <div class="route-info">
+                                <h4>Fastest Route</h4>
+                                <p>15 mins • 5.2 km</p>
+                            </div>
+                        </div>
+                        <div class="route-card">
+                            <i class="fas fa-bicycle"></i>
+                            <div class="route-info">
+                                <h4>Bike Route</h4>
+                                <p>25 mins • 4.8 km</p>
+                            </div>
+                        </div>
+                        <div class="route-card">
+                            <i class="fas fa-person-walking"></i>
+                            <div class="route-info">
+                                <h4>Walking Route</h4>
+                                <p>45 mins • 4.5 km</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="navigation-controls">
+                        <button class="start-navigation-btn">
+                            <i class="fas fa-play"></i>
+                            Start Navigation
+                        </button>
+                        <button class="stop-navigation-btn">
+                            <i class="fas fa-stop"></i>
+                            Stop Navigation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Initialize map
+        const map = L.map('map').setView([48.8566, 2.3522], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Add markers for start and end points
+        const startMarker = L.marker([48.8566, 2.3522]).addTo(map);
+        const endMarker = L.marker([48.8584, 2.2945]).addTo(map);
+
+        // Add route line
+        const routeLine = L.polyline([
+            [48.8566, 2.3522],
+            [48.8584, 2.2945]
+        ], {color: '#4CAF50'}).addTo(map);
+
+        // Fit map to show both markers
+        map.fitBounds(routeLine.getBounds());
+    </script>
+</body>
+</html>
