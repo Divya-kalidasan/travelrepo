@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories - Smart Travel Companion</title>
+    <link rel="stylesheet" href="memories.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="memories-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-plane-departure"></i>
+                <h1>Smart Travel Companion</h1>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="explore.html">
+                        <i class="fas fa-compass"></i>
+                        <span>Explore</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="trip-planning.html">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Trip Planning</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="navigation.html">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Navigation</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="memories.html">
+                        <i class="fas fa-camera"></i>
+                        <span>Memories</span>
+                    </a>
+                </li>
+                <li class="logout">
+                    <a href="index.html">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search memories...">
+                </div>
+                <button class="upload-btn">
+                    <i class="fas fa-upload"></i>
+                    Upload Photos
+                </button>
+            </header>
+
+            <!-- Memories Content -->
+            <div class="memories-content">
+                <!-- Memories Stats -->
+                <div class="memories-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-images"></i>
+                        <div class="stat-info">
+                            <h3>Total Photos</h3>
+                            <p>156</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <div class="stat-info">
+                            <h3>Trips</h3>
+                            <p>8</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="stat-info">
+                            <h3>Places</h3>
+                            <p>12</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-heart"></i>
+                        <div class="stat-info">
+                            <h3>Favorites</h3>
+                            <p>23</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Memories Grid -->
+                <div class="memories-grid">
+                    <!-- Memory Card 1 -->
+                    <div class="memory-card">
+                        <div class="memory-image">
+                            <img src="https://source.unsplash.com/400x300/?paris" alt="Paris Memory">
+                            <div class="memory-overlay">
+                                <button class="favorite-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button class="share-btn">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="memory-info">
+                            <h3>Eiffel Tower, Paris</h3>
+                            <p>Summer Vacation 2023</p>
+                            <div class="memory-meta">
+                                <span><i class="fas fa-calendar"></i> Aug 15, 2023</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Paris, France</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Memory Card 2 -->
+                    <div class="memory-card">
+                        <div class="memory-image">
+                            <img src="https://source.unsplash.com/400x300/?tokyo" alt="Tokyo Memory">
+                            <div class="memory-overlay">
+                                <button class="favorite-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button class="share-btn">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="memory-info">
+                            <h3>Shibuya Crossing</h3>
+                            <p>Japan Adventure 2023</p>
+                            <div class="memory-meta">
+                                <span><i class="fas fa-calendar"></i> Sep 20, 2023</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Tokyo, Japan</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Memory Card 3 -->
+                    <div class="memory-card">
+                        <div class="memory-image">
+                            <img src="https://source.unsplash.com/400x300/?rome" alt="Rome Memory">
+                            <div class="memory-overlay">
+                                <button class="favorite-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button class="share-btn">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="memory-info">
+                            <h3>Colosseum</h3>
+                            <p>Italian Journey 2023</p>
+                            <div class="memory-meta">
+                                <span><i class="fas fa-calendar"></i> Oct 5, 2023</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Rome, Italy</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add More Memory Cards -->
+                </div>
+
+                <!-- Load More Button -->
+                <div class="load-more">
+                    <button class="load-more-btn">
+                        <i class="fas fa-plus"></i>
+                        Load More Memories
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
