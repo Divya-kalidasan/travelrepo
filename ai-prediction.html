@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Travel Predictions</title>
+    <link rel="stylesheet" href="ai-prediction.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="prediction-box">
+            <h2><i class="fas fa-robot"></i> AI Travel Assistant</h2>
+            <div class="search-section">
+                <input type="text" id="search-input" placeholder="Enter your travel preferences...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="prediction-results">
+                <div class="result-card">
+                    <div class="card-header">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Destination Suggestion</h3>
+                    </div>
+                    <p class="prediction-text">Based on your preferences, we recommend:</p>
+                    <div class="suggestion">
+                        <span class="location">Bali, Indonesia</span>
+                        <span class="confidence">95% Match</span>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <div class="card-header">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Best Time to Visit</h3>
+                    </div>
+                    <p class="prediction-text">Optimal travel period:</p>
+                    <div class="suggestion">
+                        <span class="time">April - October</span>
+                        <span class="confidence">90% Accuracy</span>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <div class="card-header">
+                        <i class="fas fa-tasks"></i>
+                        <h3>Activity Recommendations</h3>
+                    </div>
+                    <p class="prediction-text">Top activities for you:</p>
+                    <div class="suggestion">
+                        <span class="activities">Beach Relaxation, Cultural Tours, Water Sports</span>
+                        <span class="confidence">88% Match</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feedback-section">
+                <p>How accurate were these predictions?</p>
+                <div class="feedback-buttons">
+                    <button class="feedback-btn"><i class="fas fa-thumbs-up"></i> Accurate</button>
+                    <button class="feedback-btn"><i class="fas fa-thumbs-down"></i> Not Accurate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
