@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(45deg, #4b6cb7, #182848);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.signup-box {
+    max-width: 450px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #333;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    outline: none;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.form-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 16px;
+    color: #666;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus ~ label,
+.form-group input:valid ~ label {
+    top: -20px;
+    font-size: 12px;
+    color: #4b6cb7;
+}
+
+.form-group input:focus {
+    border-bottom: 2px solid #4b6cb7;
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.remember-forgot label {
+    color: #666;
+    cursor: pointer;
+}
+
+.remember-forgot a {
+    color: #4b6cb7;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.terms {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.terms label {
+    color: #666;
+    cursor: pointer;
+}
+
+.terms a {
+    color: #4b6cb7;
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #4b6cb7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #182848;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.register-link a {
+    color: #4b6cb7;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .login-box {
+        padding: 20px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+    
+    .signup-box {
+        max-width: 100%;
+    }
+}
